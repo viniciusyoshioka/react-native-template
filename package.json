@@ -3,11 +3,12 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "android": "react-native run-android",
-        "ios": "react-native run-ios",
+        "typecheck": "tsc --noEmit",
         "lint": "eslint .",
+        "test": "jest",
         "start": "react-native start",
-        "test": "jest"
+        "android": "react-native run-android",
+        "ios": "react-native run-ios"
     },
     "dependencies": {
         "@react-native/new-app-screen": "0.83.1",
