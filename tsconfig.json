@@ -6,8 +6,12 @@
         ],
     },
     "include": [
-        "**/*.ts",
-        "**/*.tsx"
+        "src/**/*",
+        "babel.config.js",
+        "eslint.config.mjs",
+        "index.js",
+        "jest.config.js",
+        "metro.config.js"
     ],
     "exclude": [
         "**/node_modules",
