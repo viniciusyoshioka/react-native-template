@@ -5,7 +5,6 @@ import { Home } from '../screens/Home/home.screen.tsx'
 import type { ScreenParams } from './routes.types.ts'
 
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 const NativeStack = createNativeStackNavigator<ScreenParams>()
 
 
