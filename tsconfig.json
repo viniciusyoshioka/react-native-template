@@ -3,15 +3,11 @@
     "compilerOptions": {
         "types": [
             "jest"
-        ],
+        ]
     },
     "include": [
         "src/**/*",
-        "babel.config.js",
-        "eslint.config.mjs",
-        "index.js",
-        "jest.config.js",
-        "metro.config.js"
+        "index.js"
     ],
     "exclude": [
         "**/node_modules",
