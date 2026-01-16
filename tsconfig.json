@@ -4,6 +4,33 @@
         "@react-native/typescript-config"
     ],
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components": [
+                "src/components/index.ts"
+            ],
+            "@database": [
+                "src/database/index.ts"
+            ],
+            "@modules/*": [
+                "src/modules/*"
+            ],
+            "@routes": [
+                "src/routes/index.ts"
+            ],
+            "@screens/*": [
+                "src/screens/*"
+            ],
+            "@services/*": [
+                "src/services/*"
+            ],
+            "@theme": [
+                "src/theme/index.ts"
+            ],
+            "@utils": [
+                "src/utils/index.ts"
+            ],
+        },
         "types": [
             "jest"
         ]
