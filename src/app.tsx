@@ -1,6 +1,6 @@
-import { useSettings } from './modules/settings'
-import { Router } from './routes'
-import { AppThemeProvider } from './theme'
+import { useSettings } from '@modules/settings'
+import { Router } from '@routes'
+import { AppThemeProvider } from '@theme'
 
 
 export function App() {

@@ -4,7 +4,7 @@ import { MaterialProvider } from 'react-material-design-provider'
 import { useColorScheme } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
 
-import { Theme } from '../../modules/settings/settings.types.ts'
+import { Theme } from '@modules/settings'
 import { AppThemeLight } from '../app-theme.light.ts'
 import type { AppTheme } from '../app-theme.types.ts'
 import type { ThemeObject } from './app-theme-provider.types.ts'
