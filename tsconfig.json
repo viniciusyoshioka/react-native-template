@@ -12,6 +12,12 @@
             "@database": [
                 "src/database/index.ts"
             ],
+            "@hooks": [
+                "src/hooks/index.ts"
+            ],
+            "@locale": [
+                "src/locale/index.ts"
+            ],
             "@modules/*": [
                 "src/modules/*"
             ],
