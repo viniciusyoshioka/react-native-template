@@ -35,7 +35,7 @@
             ],
             "@utils": [
                 "src/utils/index.ts"
-            ],
+            ]
         },
         "types": [
             "jest"
