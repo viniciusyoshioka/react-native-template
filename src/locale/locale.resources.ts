@@ -7,6 +7,7 @@ import * as ptBRCommon from './pt-br/common.json'
 import * as ptBRHome from './pt-br/home.json'
 
 
+// TODO: Add lazy loading
 export const resources: LanguagesToNamespacesMapType = {
   [SupportedLanguages.EN_US]: {
     [Namespaces.COMMON]: enUSCommon,

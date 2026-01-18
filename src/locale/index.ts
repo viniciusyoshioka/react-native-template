@@ -10,6 +10,7 @@ if (__DEV__) {
 }
 
 
+// TODO: Create initialization function and call it in the app entry point
 i18next.init(
   {
     fallbackLng: SupportedLanguages.EN_US,
@@ -22,6 +23,7 @@ i18next.init(
     },
   },
   error => {
+    // TODO: Show the error to the user and/or save it in database
     handleInitializationError(error)
   },
 )
