@@ -11,7 +11,7 @@ import type { ThemeObject } from './app-theme-provider.types.ts'
 import { ThemeName, THEMES } from './app-theme-provider.types.ts'
 
 
-const AppThemeContext = createContext<AppTheme>(AppThemeLight)
+const AppThemeContext = createContext(AppThemeLight)
 
 
 interface AppThemeProviderProps extends PropsWithChildren {
