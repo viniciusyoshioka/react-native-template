@@ -7,34 +7,34 @@
         "baseUrl": ".",
         "paths": {
             "@components": [
-                "src/components/index.ts"
+                "./src/components/index.ts"
             ],
             "@database": [
-                "src/database/index.ts"
+                "./src/database/index.ts"
             ],
             "@hooks": [
-                "src/hooks/index.ts"
+                "./src/hooks/index.ts"
             ],
             "@locale": [
-                "src/locale/index.ts"
+                "./src/locale/index.ts"
             ],
             "@modules/*": [
-                "src/modules/*"
+                "./src/modules/*"
             ],
             "@routes": [
-                "src/routes/index.ts"
+                "./src/routes/index.ts"
             ],
             "@screens/*": [
-                "src/screens/*"
+                "./src/screens/*"
             ],
             "@services/*": [
-                "src/services/*"
+                "./src/services/*"
             ],
             "@theme": [
-                "src/theme/index.ts"
+                "./src/theme/index.ts"
             ],
             "@utils": [
-                "src/utils/index.ts"
+                "./src/utils/index.ts"
             ]
         },
         "types": [
