@@ -4,7 +4,7 @@
         "@react-native/typescript-config"
     ],
     "compilerOptions": {
-        "baseUrl": ".",
+        "downlevelIteration": null,
         "paths": {
             "@components": [
                 "./src/components/index.ts"
