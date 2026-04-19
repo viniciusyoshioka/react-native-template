@@ -18,6 +18,9 @@ module.exports = {
           '.json',
         ],
         alias: {
+          path: './src/polyfills/path',
+          'node:path': './src/polyfills/path',
+
           '@components': './src/components',
           '@database': './src/database',
           '@hooks': './src/hooks',

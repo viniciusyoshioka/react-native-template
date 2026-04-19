@@ -6,6 +6,12 @@
     "compilerOptions": {
         "downlevelIteration": null,
         "paths": {
+            "path": [
+                "./src/polyfills/path.ts"
+            ],
+            "node:path": [
+                "./src/polyfills/path.ts"
+            ],
             "@components": [
                 "./src/components/index.ts"
             ],
