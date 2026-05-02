@@ -1,3 +1,4 @@
+import { StatusBar } from '@components'
 import { FileSystemProvider, NitroFileSystem } from '@modules/file-system'
 import { useSettings } from '@modules/settings'
 import { Router } from '@routes'
@@ -12,10 +13,14 @@ export function App() {
 
 
   return (
-    <AppThemeProvider theme={settings.theme}>
-      <FileSystemProvider fileSystem={fileSystem}>
-        <Router />
-      </FileSystemProvider>
-    </AppThemeProvider>
+    <>
+      <StatusBar />
+
+      <AppThemeProvider theme={settings.theme}>
+        <FileSystemProvider fileSystem={fileSystem}>
+          <Router />
+        </FileSystemProvider>
+      </AppThemeProvider>
+    </>
   )
 }
