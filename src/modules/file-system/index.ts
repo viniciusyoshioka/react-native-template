@@ -1,5 +1,6 @@
 export * from './errors'
 export type * from './file-system.base.ts'
+export * from './file-system.constants.ts'
 export * from './file-system.provider.tsx'
 export * from './file-system.types.ts'
 export * from './file-systems'
