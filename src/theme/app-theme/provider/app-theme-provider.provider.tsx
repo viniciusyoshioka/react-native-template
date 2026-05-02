@@ -5,8 +5,8 @@ import { useColorScheme } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
 
 import { Theme } from '@modules/settings'
-import { AppThemeLight } from '../app-theme.light.ts'
 import type { AppTheme } from '../app-theme.types.ts'
+import { AppThemeLight } from '../themes'
 import type { ThemeObject } from './app-theme-provider.types.ts'
 import { ThemeName, THEMES } from './app-theme-provider.types.ts'
 

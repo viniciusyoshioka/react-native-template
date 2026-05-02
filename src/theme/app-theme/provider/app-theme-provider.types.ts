@@ -3,9 +3,8 @@ import { MaterialDarkTheme, MaterialLightTheme } from 'react-material-design-pro
 import type { MD3Theme } from 'react-native-paper'
 import { MD3DarkTheme, MD3LightTheme } from 'react-native-paper'
 
-import { AppThemeDark } from '../app-theme.dark.ts'
-import { AppThemeLight } from '../app-theme.light.ts'
 import type { AppTheme } from '../app-theme.types.ts'
+import { AppThemeDark, AppThemeLight } from '../themes'
 
 
 export enum ThemeName {
