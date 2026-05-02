@@ -35,6 +35,7 @@ module.exports = {
         },
       },
     ],
+    'react-native-worklets/plugin',
   ],
   env: {
     production: {
