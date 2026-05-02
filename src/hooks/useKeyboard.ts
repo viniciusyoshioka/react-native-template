@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
-import type { KeyboardEventListener, KeyboardEventName } from 'react-native'
+import type {
+  KeyboardEventListener as RNKeyboardEventListener,
+  KeyboardEventName as RNKeyboardEventName,
+} from 'react-native'
 import { Keyboard } from 'react-native'
+
+
+export type KeyboardEventName = RNKeyboardEventName
+
+export type KeyboardEventListener = RNKeyboardEventListener
 
 
 export function useKeyboard(
