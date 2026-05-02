@@ -30,6 +30,7 @@ module.exports = {
           '@screens': './src/screens',
           '@services': './src/services',
           '@theme': './src/theme',
+          '@types': './src/types',
           '@utils': './src/utils',
         },
       },
