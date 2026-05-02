@@ -9,7 +9,7 @@ import type { SettingsStore } from './settings.types.ts'
 import { MmkvStateStorage } from './state-storage'
 
 
-function createSettingsHook(stateStorage: StateStorage) {
+function createSettingsHook(stateStorage: StateStorage): () => SettingsStore {
   return create<SettingsStore>()(persist(
     set => ({
       settings: DEFAULT_SETTINGS,
