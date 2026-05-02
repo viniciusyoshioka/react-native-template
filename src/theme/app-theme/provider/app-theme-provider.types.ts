@@ -1,5 +1,13 @@
+import type { Theme as NavigationTheme } from '@react-navigation/native'
+import {
+  DarkTheme as NavigationDarkTheme,
+  DefaultTheme as NavigationLightTheme,
+} from '@react-navigation/native'
 import type { MaterialTheme } from 'react-material-design-provider'
-import { MaterialDarkTheme, MaterialLightTheme } from 'react-material-design-provider'
+import {
+  MaterialDarkTheme,
+  MaterialLightTheme,
+} from 'react-material-design-provider'
 import type { MD3Theme } from 'react-native-paper'
 import { MD3DarkTheme, MD3LightTheme } from 'react-native-paper'
 
@@ -12,10 +20,12 @@ export enum ThemeName {
   DARK = 'DARK',
 }
 
+
 export type ThemeObject = {
   appTheme: AppTheme
   materialTheme: MaterialTheme
   paperTheme: MD3Theme
+  navigationTheme: NavigationTheme
 }
 
 
@@ -28,10 +38,12 @@ export const THEMES: Themes = {
     appTheme: AppThemeLight,
     materialTheme: MaterialLightTheme,
     paperTheme: MD3LightTheme,
+    navigationTheme: NavigationLightTheme,
   },
   DARK: {
     appTheme: AppThemeDark,
     materialTheme: MaterialDarkTheme,
     paperTheme: MD3DarkTheme,
+    navigationTheme: NavigationDarkTheme,
   },
 }

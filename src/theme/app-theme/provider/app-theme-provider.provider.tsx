@@ -1,3 +1,6 @@
+import {
+  ThemeProvider as NavigationThemeProvider,
+} from '@react-navigation/native'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext, useMemo } from 'react'
 import { MaterialProvider } from 'react-material-design-provider'
@@ -46,7 +49,9 @@ export function AppThemeProvider(props: AppThemeProviderProps) {
     <AppThemeContext.Provider value={currentThemeObject.appTheme}>
       <MaterialProvider theme={currentThemeObject.materialTheme}>
         <PaperProvider theme={currentThemeObject.paperTheme}>
-          {props.children}
+          <NavigationThemeProvider value={currentThemeObject.navigationTheme}>
+            {props.children}
+          </NavigationThemeProvider>
         </PaperProvider>
       </MaterialProvider>
     </AppThemeContext.Provider>
