@@ -14,6 +14,7 @@ export default [
             'eslint.config.mjs',
             'jest.config.js',
             'metro.config.js',
+            'react-native.config.js',
           ],
         },
       },
