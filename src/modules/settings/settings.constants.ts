@@ -3,5 +3,5 @@ import { Theme } from './settings.types.ts'
 
 
 export const DEFAULT_SETTINGS: Settings = {
-  theme: Theme.LIGHT,
+  theme: Theme.AUTO,
 }
