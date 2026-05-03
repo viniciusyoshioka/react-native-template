@@ -1,3 +1,5 @@
+import { KeyboardProvider } from 'react-native-keyboard-controller'
+
 import { StatusBar } from '@components'
 import { FileSystemProvider, NitroFileSystem } from '@modules/file-system'
 import { useSettings } from '@modules/settings'
@@ -14,13 +16,15 @@ export function App() {
 
   return (
     <>
-      <StatusBar />
+      <KeyboardProvider>
+        <StatusBar />
 
-      <AppThemeProvider theme={settings.theme}>
-        <FileSystemProvider fileSystem={fileSystem}>
-          <Router />
-        </FileSystemProvider>
-      </AppThemeProvider>
+        <AppThemeProvider theme={settings.theme}>
+          <FileSystemProvider fileSystem={fileSystem}>
+            <Router />
+          </FileSystemProvider>
+        </AppThemeProvider>
+      </KeyboardProvider>
     </>
   )
 }
