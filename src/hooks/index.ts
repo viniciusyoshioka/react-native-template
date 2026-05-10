@@ -1,4 +1,5 @@
 export * from './useBackHandler.ts'
 export * from './useBlurInputOnKeyboardDismiss.ts'
+export * from './useHideSplashscreen.ts'
 export * from './useKeepAwakeOnDev.ts'
 export * from './useKeyboard.ts'

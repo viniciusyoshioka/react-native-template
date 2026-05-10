@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { useHideSplashscreen } from './hooks'
+import { useHideSplashscreen } from '@hooks'
 
 
 export function Home() {
