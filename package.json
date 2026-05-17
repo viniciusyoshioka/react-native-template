@@ -24,6 +24,7 @@
         "react-native-bootsplash": "^7.3.1",
         "react-native-edge-to-edge": "^1.8.1",
         "react-native-keyboard-controller": "^1.21.6",
+        "react-native-localize": "^3.7.0",
         "react-native-mmkv": "^4.3.0",
         "react-native-nitro-buffer": "^0.2.2",
         "react-native-nitro-file-system": "^0.4.0",
