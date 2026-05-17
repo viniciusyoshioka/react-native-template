@@ -1,14 +1,16 @@
 import type * as ptBRCommon from './pt-br/common.json'
 import type * as ptBRHome from './pt-br/home.json'
+import type * as ptBRInitialization from './pt-br/initialization.json'
 
 
 export enum SupportedLanguages {
-  PT_BR = 'pt-br',
-  EN_US = 'en-us',
+  PT_BR = 'pt-BR',
+  EN_US = 'en-US',
 }
 
 
 export enum Namespaces {
+  INITIALIZATION = 'initialization',
   COMMON = 'common',
   HOME = 'home',
 }
@@ -22,6 +24,7 @@ export type LanguagesToNamespacesMapType = {
 
 
 export type NamespacesToTranslationMapType = {
+  [Namespaces.INITIALIZATION]: typeof ptBRInitialization
   [Namespaces.COMMON]: typeof ptBRCommon
   [Namespaces.HOME]: typeof ptBRHome
 }

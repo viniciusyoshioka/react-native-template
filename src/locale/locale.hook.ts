@@ -1,17 +1,18 @@
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import type { Translator } from './locale.translator.ts'
+import type { Locale } from './locale.ts'
+import { locale } from './locale.ts'
 import type { SupportedLanguages } from './locale.types.ts'
 
 
-export function useLocale(): Translator {
+export function useLocale(): Locale {
 
 
   const { t, i18n } = useTranslation()
 
 
-  const translator = useMemo<Translator>(() => {
+  return useMemo<Locale>(() => {
     const currentLanguage = i18n.language as SupportedLanguages
 
     const changeLanguage = async (newLanguage: SupportedLanguages) => {
@@ -19,12 +20,11 @@ export function useLocale(): Translator {
     }
 
     return {
-      t,
+      fallbackLanguage: locale.fallbackLanguage,
+      deviceLanguage: locale.deviceLanguage,
       currentLanguage,
       changeLanguage,
+      t,
     }
   }, [t, i18n])
-
-
-  return translator
 }

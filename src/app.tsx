@@ -8,6 +8,7 @@ import {
   LogDataSource,
   TypeOrmDatabase,
 } from '@database'
+import { LocaleProvider } from '@locale'
 import { FileSystemProvider, NitroFileSystem } from '@modules/file-system'
 import { useSettings } from '@modules/settings'
 import { Router } from '@routes'
@@ -37,11 +38,13 @@ export function App() {
         <StatusBar />
 
         <AppThemeProvider theme={settings.theme}>
-          <FileSystemProvider fileSystem={fileSystem}>
-            <DatabaseProvider database={typeormDatabase}>
-              <Router />
-            </DatabaseProvider>
-          </FileSystemProvider>
+          <LocaleProvider>
+            <FileSystemProvider fileSystem={fileSystem}>
+              <DatabaseProvider database={typeormDatabase}>
+                <Router />
+              </DatabaseProvider>
+            </FileSystemProvider>
+          </LocaleProvider>
         </AppThemeProvider>
       </KeyboardProvider>
     </>

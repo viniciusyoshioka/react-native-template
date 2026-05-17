@@ -16,6 +16,7 @@ function getMissingTranslationKeys(): MissingTranslationKeys {
   const missingKeys: MissingTranslationKeys = {
     [Namespaces.COMMON]: new Set<string>(),
     [Namespaces.HOME]: new Set<string>(),
+    [Namespaces.INITIALIZATION]: new Set<string>(),
   }
 
 
