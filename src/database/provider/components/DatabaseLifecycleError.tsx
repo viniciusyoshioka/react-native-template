@@ -183,11 +183,7 @@ function DatabaseCloseError() {
 export function DatabaseLifecycleError(props: DatabaseLifecycleResponse) {
 
 
-  const hideSplashscreen = useHideSplashscreen()
-
-  useEffect(() => {
-    hideSplashscreen()
-  }, [])
+  useHideSplashscreen()
 
 
   const hasInitializationError = props.initializationErrors

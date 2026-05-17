@@ -1,12 +1,19 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import { hide } from 'react-native-bootsplash'
 
 
-export function useHideSplashscreen() {
+export function useHideSplashscreen(hideOnScreenOpen = true) {
 
 
   const hideSplashscreen = useCallback(() => {
     hide({ fade: true })
+  }, [])
+
+
+  useEffect(() => {
+    if (hideOnScreenOpen) {
+      hideSplashscreen()
+    }
   }, [])
 
 
