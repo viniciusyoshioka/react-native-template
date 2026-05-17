@@ -143,18 +143,21 @@ export function DatabaseLifecycleError(props: DatabaseLifecycleResponse) {
 
   const hasInitializationError = props.initializationErrors
   if (hasInitializationError) {
+    console.error('Database initialization error:', props.initializationErrors)
     return <DatabaseInitializationError />
   }
 
   const hasMigrationError = props.migrationErrors
   if (hasMigrationError) {
+    console.error('Database migration error:', props.migrationErrors)
     return <DatabaseMigrationError />
   }
 
   const hasCloseError = props.closeErrors
   if (hasCloseError) {
+    console.error('Database close error:', props.closeErrors)
     return <DatabaseCloseError />
   }
 
-  return null
+  throw new Error('DatabaseLifecycleError called without error handling')
 }
