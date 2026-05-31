@@ -1,3 +1,4 @@
+export { DatabaseName } from './database'
 export * from './errors'
 export * from './provider'
 export * from './services'
