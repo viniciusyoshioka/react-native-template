@@ -32,7 +32,11 @@ export function useDatabaseLifecycle(
 
   const initialize = useCallback(async () => {
     const initializationErrors = await database.initialize()
-    if (initializationErrors.APP || initializationErrors.LOG) {
+    const hasSomeInitializationError = Object
+      .values(initializationErrors)
+      .some(initializationError => !!initializationError)
+
+    if (hasSomeInitializationError) {
       setResponse(previousResponse => ({
         ...previousResponse,
         initializationErrors,
@@ -41,7 +45,11 @@ export function useDatabaseLifecycle(
     }
 
     const migrationErrors = await database.migrate()
-    if (migrationErrors.APP || migrationErrors.LOG) {
+    const hasSomeMigrationError = Object
+      .values(migrationErrors)
+      .some(migrationError => !!migrationError)
+
+    if (hasSomeMigrationError) {
       setResponse(previousResponse => ({
         ...previousResponse,
         migrationErrors,
@@ -56,7 +64,11 @@ export function useDatabaseLifecycle(
 
   const finalize = useCallback(async () => {
     const closeErrors = await database.close()
-    if (closeErrors.APP || closeErrors.LOG) {
+    const hasSomeCloseError = Object
+      .values(closeErrors)
+      .some(closeError => !!closeError)
+
+    if (hasSomeCloseError) {
       setResponse(previousResponse => ({
         ...previousResponse,
         closeErrors,
