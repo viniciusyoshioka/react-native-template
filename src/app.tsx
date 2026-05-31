@@ -4,6 +4,7 @@ import { KeyboardProvider } from 'react-native-keyboard-controller'
 import { StatusBar } from '@components'
 import {
   AppDataSource,
+  DatabaseName,
   DatabaseProvider,
   LogDataSource,
   TypeOrmDatabase,
@@ -26,8 +27,8 @@ export function App() {
 
   const typeormDatabase = useMemo(() => {
     return new TypeOrmDatabase({
-      APP: AppDataSource,
-      LOG: LogDataSource,
+      [DatabaseName.APP]: AppDataSource,
+      [DatabaseName.LOG]: LogDataSource,
     })
   }, [])
 
