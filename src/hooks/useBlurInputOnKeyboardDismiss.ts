@@ -6,7 +6,7 @@ import { useKeyboard } from './useKeyboard.ts'
 
 
 export function useBlurInputOnKeyboardDismiss(
-  inputs: RefObject<TextInput | null>[],
+  ...inputs: RefObject<TextInput | null>[]
 ) {
 
 
@@ -14,7 +14,7 @@ export function useBlurInputOnKeyboardDismiss(
     inputs.forEach(input => {
       input.current?.blur()
     })
-  }, [inputs])
+  }, inputs)
 
 
   useKeyboard('keyboardDidHide', blurInputs)
