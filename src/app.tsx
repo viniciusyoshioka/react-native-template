@@ -10,6 +10,7 @@ import {
   TypeOrmDatabase,
 } from '@database'
 import { LocaleProvider } from '@locale'
+import { AlertProvider } from '@modules/alert'
 import { FileSystemProvider, NitroFileSystem } from '@modules/file-system'
 import { useSettings } from '@modules/settings'
 import { Router } from '@routes'
@@ -40,11 +41,13 @@ export function App() {
 
         <AppThemeProvider theme={settings.theme}>
           <LocaleProvider>
-            <FileSystemProvider fileSystem={fileSystem}>
-              <DatabaseProvider database={typeormDatabase}>
-                <Router />
-              </DatabaseProvider>
-            </FileSystemProvider>
+            <AlertProvider>
+              <FileSystemProvider fileSystem={fileSystem}>
+                <DatabaseProvider database={typeormDatabase}>
+                  <Router />
+                </DatabaseProvider>
+              </FileSystemProvider>
+            </AlertProvider>
           </LocaleProvider>
         </AppThemeProvider>
       </KeyboardProvider>
