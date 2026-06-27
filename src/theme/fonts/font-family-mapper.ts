@@ -22,6 +22,7 @@ function mapJetBrainsMono(fontWeight: FontWeight): TextStyle {
       }
     case FontWeight.REGULAR:
     default:
+      fontWeight satisfies FontWeight.REGULAR
       return {
         fontFamily: 'JetBrainsMonoRegular',
         fontWeight: 'regular',
@@ -39,6 +40,7 @@ export function fontFamilyMapper(
     case FontFamily.JETBRAINS_MONO:
       return mapJetBrainsMono(fontWeight)
     default:
+      fontFamily satisfies never
       return {}
   }
 }
