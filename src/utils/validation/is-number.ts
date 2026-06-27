@@ -21,16 +21,16 @@ const defaultIsNumberOptions: IsNumberOptions = {
 
 export function isNumber(
   value: unknown,
-  options = defaultIsNumberOptions,
+  options?: IsNumberOptions,
 ): boolean {
   const {
-    allowNegative,
-    allowPositive,
-    allowZero,
-    allowFloat,
-    allowNaN,
-    allowInfinite,
-  } = options
+    allowNegative = defaultIsNumberOptions.allowNegative,
+    allowPositive = defaultIsNumberOptions.allowPositive,
+    allowZero = defaultIsNumberOptions.allowZero,
+    allowFloat = defaultIsNumberOptions.allowFloat,
+    allowNaN = defaultIsNumberOptions.allowNaN,
+    allowInfinite = defaultIsNumberOptions.allowInfinite,
+  } = options ?? {}
 
   if (typeof value !== 'number') {
     return false
