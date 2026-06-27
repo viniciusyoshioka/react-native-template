@@ -1,6 +1,9 @@
+export const DEFAULT_BATCH_SIZE = 20
+
+
 export function createBatchArray<T = unknown>(
   array: T[],
-  batchSize = 20,
+  batchSize = DEFAULT_BATCH_SIZE,
 ): T[][] {
   const batchArray: T[][] = []
 
