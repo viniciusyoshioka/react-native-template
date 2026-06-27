@@ -32,8 +32,23 @@ export function isNumber(
     allowInfinite = defaultIsNumberOptions.allowInfinite,
   } = options ?? {}
 
+  const isNaN = Number.isNaN(value)
+  const isInfinity = value === Infinity
+
+  if (!allowNaN) {
+    if (isNaN) return false
+  }
+
+  if (!allowInfinite) {
+    if (isInfinity) return false
+  }
+
   if (typeof value !== 'number') {
     return false
+  }
+
+  if (isNaN || isInfinity) {
+    return true
   }
 
   if (!allowNegative) {
@@ -54,16 +69,6 @@ export function isNumber(
   if (!allowFloat) {
     const isFloat = !Number.isInteger(value)
     if (isFloat) return false
-  }
-
-  if (!allowInfinite) {
-    const isInfinite = !Number.isFinite(value)
-    if (isInfinite) return false
-  }
-
-  if (!allowNaN) {
-    const isNaN = Number.isNaN(value)
-    if (isNaN) return false
   }
 
   return true
