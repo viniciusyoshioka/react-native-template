@@ -60,6 +60,12 @@ describe('isNumber', () => {
 
       expect(isValid).toBe(false)
     })
+
+    it('should not allow when not specified', () => {
+      const isValid = isNumber(value)
+
+      expect(isValid).toBe(false)
+    })
   })
 
   describe('allowPositive', () => {
@@ -82,6 +88,12 @@ describe('isNumber', () => {
 
       expect(isValid).toBe(false)
     })
+
+    it('should not allow when not specified', () => {
+      const isValid = isNumber(value)
+
+      expect(isValid).toBe(false)
+    })
   })
 
   describe('allowZero', () => {
@@ -101,6 +113,12 @@ describe('isNumber', () => {
         ...disallowAll,
         allowZero: false,
       })
+
+      expect(isValid).toBe(false)
+    })
+
+    it('should not allow when not specified', () => {
+      const isValid = isNumber(value)
 
       expect(isValid).toBe(false)
     })
@@ -149,6 +167,18 @@ describe('isNumber', () => {
 
       expect(isValid).toBe(false)
     })
+
+    it('should not allow positive when not specified', () => {
+      const isValid = isNumber(positiveValue)
+
+      expect(isValid).toBe(false)
+    })
+
+    it('should not allow negative when not specified', () => {
+      const isValid = isNumber(negativeValue)
+
+      expect(isValid).toBe(false)
+    })
   })
 
   describe('allowNaN', () => {
@@ -171,6 +201,12 @@ describe('isNumber', () => {
 
       expect(isValid).toBe(false)
     })
+
+    it('should not allow when not specified', () => {
+      const isValid = isNumber(value)
+
+      expect(isValid).toBe(false)
+    })
   })
 
   describe('allowInfinite', () => {
@@ -190,6 +226,12 @@ describe('isNumber', () => {
         ...disallowAll,
         allowInfinite: false,
       })
+
+      expect(isValid).toBe(false)
+    })
+
+    it('should not allow when not specified', () => {
+      const isValid = isNumber(value)
 
       expect(isValid).toBe(false)
     })
