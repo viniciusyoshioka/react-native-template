@@ -10,10 +10,10 @@ export interface IsNumberOptions {
 
 
 const defaultIsNumberOptions: IsNumberOptions = {
-  allowNegative: true,
-  allowPositive: true,
-  allowZero: true,
-  allowFloat: true,
+  allowNegative: false,
+  allowPositive: false,
+  allowZero: false,
+  allowFloat: false,
   allowNaN: false,
   allowInfinite: false,
 }
