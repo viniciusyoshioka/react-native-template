@@ -1,6 +1,7 @@
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 import { Button, Dialog, Text } from 'react-native-paper'
 
+import { useLocale } from '@locale'
 import type { AlertButton, AlertItemData } from '../alert.types.ts'
 import { useAlert } from '../provider'
 
@@ -18,6 +19,7 @@ export const Alert = memo((props: AlertProps) => {
 
 
   const alert = useAlert()
+  const { t } = useLocale()
 
 
   const dismissItself = useCallback(() => {
@@ -42,6 +44,18 @@ export const Alert = memo((props: AlertProps) => {
   }, [dismissItself])
 
 
+  const buttonsToShow = useMemo<AlertButton[]>(() => {
+    if (buttons) return buttons
+
+    return [
+      {
+        label: t('ok'),
+        onPress: dismissItself,
+      },
+    ]
+  }, [buttons, t, dismissItself])
+
+
   return (
     <Dialog visible={true} onDismiss={dismissItself}>
       <Dialog.Title>
@@ -57,8 +71,7 @@ export const Alert = memo((props: AlertProps) => {
       )}
 
       <Dialog.Actions>
-        {buttons?.map((button, index) => (
-          // TODO: Add default button
+        {buttonsToShow.map((button, index) => (
           <AlertButton key={index} alertButton={button} />
         ))}
       </Dialog.Actions>
