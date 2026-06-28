@@ -17,7 +17,6 @@ describe('createBatchArray', () => {
 
       const batchArray = createBatchArray(
         arrayToSplitIntoBatches,
-        batchSize,
       )
 
       const batchArraySizeAsFloat = (
@@ -54,7 +53,6 @@ describe('createBatchArray', () => {
 
       const batchArray = createBatchArray(
         arrayToSplitIntoBatches,
-        batchSize,
       )
 
       const batchArraySizeAsFloat = (
