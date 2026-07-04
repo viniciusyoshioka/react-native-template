@@ -207,6 +207,33 @@ const WINDOWS_ROOT_REGEX = /^[a-zA-Z]:\\/
 const LINUX_ROOT_REGEX = /^\//
 
 
+function assertPathIsString(path: string): void {
+  if (typeof path !== 'string') {
+    throw new TypeError(
+      `Path must be a string. Received ${JSON.stringify(path)}`,
+    )
+  }
+}
+
+function assertPathsAreStrings(paths: string[]): void {
+  for (let i = 0; i < paths.length; i++) {
+    const path = paths[i]
+
+    if (typeof path !== 'string') {
+      throw new TypeError(
+        `Path must be a string. Received ${JSON.stringify(path)} at index ${i}`,
+      )
+    }
+  }
+}
+
+function isAbsoluteGeneric(path: string, regex: RegExp): boolean {
+  assertPathIsString(path)
+
+  return regex.test(path)
+}
+
+
 function createPathImplementation(params: {
   sep: string
   delimiter: string
@@ -216,27 +243,6 @@ function createPathImplementation(params: {
 
 
   const ONE_OR_MORE_SEPARATORS = new RegExp(`${sep}+`, 'g')
-
-
-  function assertPathIsString(path: string): void {
-    if (typeof path !== 'string') {
-      throw new TypeError(
-        `Path must be a string. Received ${JSON.stringify(path)}`,
-      )
-    }
-  }
-
-  function assertPathsAreStrings(paths: string[]): void {
-    for (let i = 0; i < paths.length; i++) {
-      const path = paths[i]
-
-      if (typeof path !== 'string') {
-        throw new TypeError(
-          `Path must be a string. Received ${JSON.stringify(path)} at index ${i}`,
-        )
-      }
-    }
-  }
 
 
   function normalize(path: string): string {
@@ -442,13 +448,13 @@ function createPathImplementation(params: {
 const posixPathPolyfill = createPathImplementation({
   sep: LINUX_SEPARATOR,
   delimiter: LINUX_DELIMITER,
-  isAbsolute: (path: string) => LINUX_ROOT_REGEX.test(path),
+  isAbsolute: (path: string) => isAbsoluteGeneric(path, LINUX_ROOT_REGEX),
 })
 
 const win32PathPolyfill = createPathImplementation({
   sep: WINDOWS_SEPARATOR,
   delimiter: WINDOWS_DELIMITER,
-  isAbsolute: (path: string) => WINDOWS_ROOT_REGEX.test(path),
+  isAbsolute: (path: string) => isAbsoluteGeneric(path, WINDOWS_ROOT_REGEX),
 })
 
 
