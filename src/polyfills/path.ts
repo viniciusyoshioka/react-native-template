@@ -171,7 +171,7 @@ export interface PathImpl {
    *
    * @param pathObject path to evaluate.
    */
-  format: (pathInfo: ParsedPath) => string
+  format: (pathInfo: FormatInputPathObject) => string
 
   /**
    * On Windows systems only, returns an equivalent namespace-prefixed path for the given path.
@@ -226,6 +226,42 @@ function assertPathsAreStrings(paths: string[]): void {
     }
   }
 }
+
+function assertFormatInputPathObject(
+  formatInputPathObject: unknown,
+): asserts formatInputPathObject is FormatInputPathObject {
+  const isNull = formatInputPathObject === null
+  const isObject = typeof formatInputPathObject === 'object'
+  const isJsonObject = Object.getPrototypeOf(formatInputPathObject) === Object.prototype
+  if (isNull || !isObject || !isJsonObject) {
+    throw new TypeError('formatInputPathObject must be a string')
+  }
+
+  const {
+    root,
+    dir,
+    base,
+    ext,
+    name,
+  } = formatInputPathObject as FormatInputPathObject
+
+  if (root !== undefined && typeof root !== 'string') {
+    throw new TypeError('root must be undefined or string')
+  }
+  if (dir !== undefined && typeof dir !== 'string') {
+    throw new TypeError('dir must be undefined or string')
+  }
+  if (base !== undefined && typeof base !== 'string') {
+    throw new TypeError('base must be undefined or string')
+  }
+  if (ext !== undefined && typeof ext !== 'string') {
+    throw new TypeError('ext must be undefined or string')
+  }
+  if (name !== undefined && typeof name !== 'string') {
+    throw new TypeError('name must be undefined or string')
+  }
+}
+
 
 function isAbsoluteGeneric(path: string, regex: RegExp): boolean {
   assertPathIsString(path)
@@ -415,6 +451,8 @@ function createPathImplementation(params: {
 
 
   function format(pathObject: FormatInputPathObject): string {
+    assertFormatInputPathObject(pathObject)
+
     const { root, dir, base } = pathObject
     const path = [root, dir, base].join(sep)
     return normalize(path)
