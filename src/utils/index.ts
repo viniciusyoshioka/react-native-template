@@ -1,2 +1,3 @@
-export * from './normalize-error.ts'
-export * from './stringify-error.ts'
+export * from './case-conversor'
+export * from './normalize-error'
+export * from './stringify-error'
